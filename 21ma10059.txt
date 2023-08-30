@@ -1,0 +1,449 @@
+A:Abb
+mov ah,2
+mov dl,65
+int 33
+mov dl,98
+int 33
+int 33
+mov ah,76
+int 33
+B:Ra.m 
+mov ah,2
+mov dl,82
+int 33
+mov dl,97
+int 33
+mov dl,4
+int 33
+mov dl,'m'
+int 33
+mov ah,76
+int 33
+c:g99
+mov ah,2
+mov al,68
+mov dl,103
+mov cl,57
+int 21h
+mov dl,cl
+int 21h
+mov dl,al
+int 21h
+mov ah,76
+int 21h
+d:_b
+mov dl,40
+mov bh,32
+mov ah,2
+mov dl,bh
+int 21h
+mov dl,90
+sub dl,24
+int 21h
+mov ah,76
+int 21h
+e:A
+mov cl,100
+mov bh,105
+add cl,bh
+mov ah,2
+mov dl,63
+adc dl,2
+int 21h
+mov ah,76
+int 21h
+
+
+
+
+1:
+mov ah,1
+int 33
+mov dl,al
+add dl,dl
+mov ah,2
+int 33
+mov ah,76
+int 33
+
+
+2:
+mov ah,1
+int 33
+mov dl,al
+add dl,al
+sub dl,48
+mov ah,2
+int 33
+mov ah,76
+int 33
+
+3:
+mov ah,1
+int 33
+mov dl,al
+int 33
+add dl,al
+mov ah,2
+int 33
+mov ah,76
+int 33
+
+4:
+mov ah,1
+int 33
+mov cl,al
+int 33
+mov ch,al
+int 33
+mov dh,al
+int 33
+mov dl,al
+mov ah,2
+int 33
+
+mov dl,dh
+int 33
+mov dl,ch
+int 33
+mov dl,cl
+int 33
+
+mov ah,76
+int 33
+
+5:
+mov ah,1
+int 33
+mov cl,al
+sub cl,48
+int 33
+mov dl,al
+sub dl,48
+add dl,cl
+add dl,48
+mov ah,2
+int 33
+mov ah,76
+int 33
+
+
+6:
+mov ah,1
+int 33
+mov cl,al
+sub cl,48
+int 33
+add cl,al
+sub cl,10
+mov dl,49
+mov ah,2
+int 33
+mov dl,cl
+int 33
+mov ah,76
+int 33
+
+8:
+mov ah,1
+int 33
+mov cl,al
+int 33
+mov dh,al
+sub dh,cl
+mov dl,45
+add dh,48
+mov ah,2
+int 33
+mov dl,dh
+int 33
+mov ah,76
+int 33
+
+9:
+mov ah,1
+int 33
+mov cl,al
+add cl,156
+mov ah,2
+mov dl,65
+adc dl,0
+int 33
+mov ah,76
+int 33
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--------------------ASSIGNMENT 2------------
+
+DAY 2 8/10
+
+1:
+.model small
+.code
+mov ah,1
+int 33
+cmp al,65
+jg l1
+jmp l3
+l1:cmp al,90
+jg l3
+mov dl,224
+jmp l4
+l3:mov dl,225
+l4:mov ah,2
+int 33
+mov ah,76
+int 33
+end
+
+2:
+.model small
+.code
+mov ah,1
+int 33
+mov dl,226
+cmp al,97
+jge l3
+cmp al,65
+jge l2
+jmp l4
+l2:mov dl,225
+jmp l4
+l3:mov dl,224
+l4:mov ah,2
+int 33
+mov ah,76
+int 33
+end
+
+
+
+5:
+
+.model small
+.code
+mov ah,1
+int 33
+mov cl,al
+int 33
+mov dl,al
+
+cmp cl,dl
+jg l4
+sub dl,cl
+add dl,48
+mov cl,dl
+mov dl,45
+mov ah,2
+int 33
+mov dl,cl
+int 33
+jmp l1
+
+l4:sub cl,dl
+add cl,48
+mov dl,cl
+mov ah,2
+int 33
+l1:mov ah,76
+int 33
+end
+
+
+
+6:
+.model small
+.code
+mov ah,1
+int 33
+mov cl,al
+int 33
+mov dh,al
+
+cmp dh,65
+je l2
+
+cmp dh,66
+je l3
+
+l2:sub cl,48
+add cl,cl
+add cl,48
+mov dl,cl
+jmp l1
+
+l3:add cl,1
+mov dl,cl
+jmp l1
+
+l1:mov ah,2
+int 33
+mov ah,76
+int 33
+end
+
+
+
+9:
+.model small
+.code
+mov ah,1
+int 33
+mov dl,224
+cmp al,97
+jge l1
+add dl,1
+l1:mov ah,2
+int 33
+mov ah,76
+int 33
+end
+
+10:
+.model small
+.code
+mov ah,1
+int 33
+mov cl,al
+int 33
+mov ch,al
+cmp ch,cl
+jge l2
+mov dl,cl
+jmp l1
+l2:mov dl,ch
+jmp l1
+
+
+l1:mov ah,2
+int 33
+mov ah,76
+int 33
+end
+
+13:
+(a)
+.model small
+.code
+mov ah,2
+mov dl,70
+int 33
+l2:
+sub dl,1
+int 33
+cmp dl,65
+je l1
+jmp l2
+l1:mov ah,76
+int 33
+end
+
+(b)
+.model small
+.code
+mov ah,2
+mov dl,65
+mov cl,1
+int 33
+l2:
+add cl,1
+int 33
+cmp cl,5
+je l1
+jmp l2
+l1:mov ah,76
+int 33
+end
+
+(c)
+.model small
+.code
+mov ah,2
+mov dl,65
+mov cl,1
+int 33
+l2:
+add dl,cl
+add cl,1
+int 33
+cmp cl,5
+je l1
+jmp l2
+l1:mov ah,76
+int 33
+end
+
+
+14:
+
+.model small
+.code
+mov ah,1
+int 33
+mov dl,al
+l2:
+cmp dl,0
+je l3
+cmp dl,1
+je l4
+
+sub dl,2
+jmp l2
+
+l3:
+mov dl,65
+jmp l1
+
+l4:mov dl,66
+
+l1:mov ah,2
+int 33
+mov ah,76
+int 33
+end
+-------------ASSIGNMENT 3 WORD REG----------------
+
+
+
+
+A:
+.model small
+.code
+mov dx,25665
+mov ah,2
+int 33
+mov dl,dh
+int 33
+mov ah,76
+int 33
+End
+
+
+B:
+.model small
+.code
+mov ch,3
+mov cl,32
+mov dl,'P'
+cmp CX,801
+jne l1
+Mov DL,'Q'
+l1:mov ah,2
+int 33
+mov ah,76
+int 33
+End
