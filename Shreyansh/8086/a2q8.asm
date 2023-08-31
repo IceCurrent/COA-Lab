@@ -5,8 +5,12 @@ int 33
 mov bl, al
 int 33
 sub bl, al
-mov dl, 65
-adc dl, 0
+cmp bl, 10
+jl L1
+add bl, 55
+jmp L2
+L1: add bl, 48
+L2: mov dl, bl
 mov ah, 2
 int 33
 mov ah, 76
