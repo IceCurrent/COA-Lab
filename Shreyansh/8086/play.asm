@@ -1,16 +1,4 @@
 .model small
 .code
-mov cl, 240
-mov ch, 100
-add cl, 20
-mov dl, 'n'
-jne L1
-mov dl, 'c'
-L1:
-mov ah, 2
-int 33
-mov dl, ch
-int 33
-mov ah,76
-int 33
+db 180,2,178,65,235,8,2,212,205,33,180,76,205,33,178,80,235,-12
 end
